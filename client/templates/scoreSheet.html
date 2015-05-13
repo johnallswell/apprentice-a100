@@ -1,0 +1,110 @@
+<template name="scoreSheet">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">
+                Project Score Sheet
+            </h1>
+            <select id="question" name="question" class="input-xlarge">
+              {{#each oneView}}
+                <option {{selected}}>{{profile.firstName}} {{profile.lastName}}</option>
+              {{/each}}  
+            </select>
+            
+            <h6 class="text-left">
+                Directions: Use this template each week to score teams on their live or video presentations. If judging individual presentations, rate individuals on their organization (under group score) 
+
+            </h6>
+
+            <h6 class="text-left">
+              Scale Defined:
+              <p>0 - Complete failure on this metric (auto-zero for anyone who does not complete a demo)</p>
+              <p>1 - Poor quality; exhibits lack of effort or technical aptitude</p>
+              <p>2 - Average quality; work is of acceptable quality</p>
+              <p>3 - Good quality; work meets expectations</p>
+              <p>4 - Excellent quality; work exceeds expectations</p>
+            </h6>
+        </div>
+        <div id="n-tables">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+            <thead class="cf">
+              <tr>
+                <th class="col-md-8">Team Name</th>
+                <th class="col-md-4">Person</th>
+              </tr>
+              <tr>
+                <th>Individual Score:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Preparation – is the Individual team member prepared for his or her section?</td>
+                <td>
+                  <select id="question1" name="question1" class="input-xlarge">
+                    <option>4 - Excellent quality</option>
+                    <option>3 - Good quality</option>
+                    <option>2 - Average quality</option>
+                    <option>1 - Poor quality</option>
+                    <option>0 - Complete failure</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Technical Presentation – did the individual make correct use of technical terms, speak succinctly, and provide clear explanation of code?
+                </td>
+                <td>
+                  <select id="question2" name="question2" class="input-xlarge">
+                    <option>4 - Excellent quality</option>
+                    <option>3 - Good quality</option>
+                    <option>2 - Average quality</option>
+                    <option>1 - Poor quality</option>
+                    <option>0 - Complete failure</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Delivery – how was the individual's tone of voice, volume, eye contact, and clarity?</td>
+                <td>
+                  <select id="question3" name="question3" class="input-xlarge">
+                    <option>4 - Excellent quality</option>
+                    <option>3 - Good quality</option>
+                    <option>2 - Average quality</option>
+                    <option>1 - Poor quality</option>
+                    <option>0 - Complete failure</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+              <thead>
+                <tr rowspan="2">
+                  <th>Group Score:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Organization – did the team overall do a good job of clearly organizing the presentation and maintaining a good flow?
+                  </td>
+                  <td>
+                    <select id="question4" name="question4" class="input-xlarge">
+                    <option>4 - Excellent quality</option>
+                    <option>3 - Good quality</option>
+                    <option>2 - Average quality</option>
+                    <option>1 - Poor quality</option>
+                    <option>0 - Complete failure</option>
+                  </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <textarea id="textarea" name="textarea" maxlength="300">default text</textarea>
+                  </td>
+                </tr>
+              </tbody>
+          </table>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn submitScore">Submit Form</button>
+    </div>
+  </div>
+</template>

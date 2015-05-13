@@ -1,0 +1,1 @@
+Apprentice = new Mongo.Collection('apprentice');

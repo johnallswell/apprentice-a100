@@ -1,0 +1,29 @@
+<template name="home">
+  <div class="container-fluid">
+  <div class="row">
+	  <div class="col-xs-12">
+	   <h3>Welcome {{currentUser.profile.firstName}} {{currentUser.profile.lastName}}
+	   </h3>
+	  </div>
+  </div>
+  	<div class="row">
+  		<div class="col-xs-3">
+  			{{> sideNavs}}
+  		</div>
+  		<div class="col-xs-9 apprenticeView">
+  			{{> apprenticeView}}
+  		</div>
+  		<div class="col-xs-9 addForm">
+  			{{> addApprentice}}
+  		</div>
+  		<div class="col-xs-9 scoreSheetView">
+  			{{> scoreSheet}}
+  		</div>
+      <div class="col-xs-9 createGroupForm">
+        {{> createGroup}}
+      </div>
+
+  	</div>
+  </div>
+</template>
+

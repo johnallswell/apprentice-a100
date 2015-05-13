@@ -1,0 +1,96 @@
+<template name="viewIndividual">
+
+<div class="panel panel-default">
+   <div class="panel-heading">
+      <h3 class="panel-title">
+	    {{#with viewIndividual}}
+		{{firstName}} {{lastName}} 
+		{{/with}}
+		<span class="text-right col-xs-offset-6">
+			<a href="#editItemModal" data-toggle="modal">Edit</a>
+			<a href="#deletePrompt" data-toggle="modal">Delete</a>
+		</span>
+      </h3>
+   </div>
+   <div class="panel-body">
+   <table class="col-xs-8">
+   	<tr>
+   	{{#with viewIndividual}}
+   		<td class=".span2">First Name</td>
+   		<td class=".span2">{{firstName}}</td>
+   	{{/with}}
+   	</tr>
+   	<tr>
+   	{{#with viewIndividual}}
+   		<td class=".span2">Last Name</td>
+   		<td class=".span2">{{lastName}}</td>
+   	{{/with}}
+   	</tr>
+   </table>
+    
+   </div>
+</div>
+
+
+
+  <div class="modal fade" id="editItemModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal" type=
+                    "button"><span>&times;</span><span class=
+                    "sr-only">Close</span></button>
+
+                    <h4 class="modal-title" id="myModalLabel">Edit Facilitator</h4>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                    {{#with viewIndividual}}
+                        <div class="form-group">
+                            <label>First Name</label> <input class=
+                            "form-control" name="firstName" placeholder=
+                            "{{firstName}}" type="text" value="">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Last Name</label> <input class=
+                            "form-control" name="lastName" placeholder=
+                            "{{lastName}}" type="text" value="">
+                        </div>
+                     {{/with}}   
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" type=
+                    "button">Cancel</button> <button class="btn btn-primary editProfile"
+                    data-action="editProfile" type="button">+ Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Prompts User when delete is clicked -->
+<div id="deletePrompt" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Confirmation</h4>
+            </div>
+            <div class="modal-body">
+ 				{{#with viewIndividual}}           
+                <p>Do you really want to Remove {{firstName}} {{lastName}} from your records?</p>
+                {{/with}}
+                <p class="text-warning"><small>If you click "Yes", Apprentice cannot be recovered.</small></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary deleteDoc">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+</template>

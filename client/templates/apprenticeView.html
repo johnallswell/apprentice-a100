@@ -1,0 +1,63 @@
+<template name="apprenticeView">
+<h1>List of Apprentice</h1>
+  
+
+<div class="row">
+    <div class="list-group col-xs-3 bs-docs-sidebar">
+        {{#each apprenticeView}} <a class="list-group-item {{selected}} facilitator" href=
+        "#">{{ firstName }} {{ lastName }}</a> {{/each}}
+    </div>
+
+    <div class="col-xs-7 introPanel">
+        <h3>Click on <a data-toggle="modal" data-target="#addItemModal" href=
+        "#"> + Add Facilitator</a> or Select a Facilitator to view more details</h3>
+    </div><!-- Displays more details about clicked user -->
+
+    <div class="col-xs-7 viewPanel">
+        {{> viewIndividual}}
+    </div>
+</div><!-- Row Ends Here -->
+<!-- Modal -->
+
+<div class="modal fade" id="addItemModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type=
+                "button"><span>&times;</span><span class=
+                "sr-only">Close</span></button>
+
+                <h4 class="modal-title" id="myModalLabel">Add a
+                Facilitator</h4>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>First Name</label> <input class="form-control"
+                        name="first" placeholder="(i.e. John)" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last Name</label> <input class="form-control"
+                        name="last" placeholder="(i.e. Doe)" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label> <input class="form-control" name=
+                        "email" placeholder="agency@email.com" type="email">
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal" type=
+                "button">Cancel</button> <button class="btn btn-primary"
+                data-action="add-fac" type="button">+ Add Facilitator</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</template>
